@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
+  body{
+    height: 100vh;
+    display: flex;
+    background-color: rgb(54, 83, 83);
+  }
+
+  .memory-game{
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin-bottom: 5%;
+    
+  }
+
+  .memory-card{
+    height: calc(33,333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+  }
+
+  .memory-card:active {
+    transform: scale(0.94);
+    transition: transform .2s;
+  }
+
+
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  .skew-menu {
+    text-align: center;
+    position:absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.skew-menu ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform: skew(-25deg);
+}
+
+.skew-menu ul li {
+    background: #eca217bb;
+    float: left;
+    border-right: 1px solid #eee;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    transition: all 0.3s linear;
+    height: 50px !important;
+    width: 200px;
+}
+
+.skew-menu ul li:first-child {
+    border-radius: 7px 0 0 7px;
+}
+
+.skew-menu ul li:last-child {
+    border-right: none;
+    border-radius: 0 7px 7px 0;
+}
+
+
+    
+
+.skew-menu ul li a {
+    display: block;
+    padding: 1em 2em;
+    color: inherit;
+    text-decoration: none;
+    transform: skew(25deg);
+}
+
+#reload{
+  cursor: pointer;
+}
+
+#reload:hover{
+  background: #eee;
+    color: tomato;
+}
+#partidas{
+  cursor: default;
+}
+
+#partidas a {
+  margin-top: -7.2px;
+ text-align: left;
+ margin-left: 7%;
+ 
+}
+  

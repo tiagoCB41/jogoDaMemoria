@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="memory-game" id="memory-game">
+        <script src="./embaralhar.js"></script>
+
+      </section>
+      <script src="./JScript.js"></script>
+      
+      <div class="skew-menu">
+        <ul>
+            
+            <li id="partidas"><script>
+              partidas1 = sessionStorage.getItem("partidas")
+              let nomeValue = sessionStorage.getItem("nome")
+              document.getElementById("partidas").innerHTML = "<a>Jogador: " + nomeValue + " Partidas: " + partidas1
+            </script></a></li>
+            <li id="reload" onclick="newGame()"><a>Embaralhar</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
